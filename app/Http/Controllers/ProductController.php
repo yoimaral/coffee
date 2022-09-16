@@ -40,7 +40,7 @@ class ProductController extends Controller
         $product = new Product;
 
         $product->name = $request->name;
-        $product->img = $request->eference;
+        $product->reference = $request->reference;
         $product->price = $request->price;
         $product->weight = $request->weight;
         $product->category = $request->category;
@@ -93,6 +93,8 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+
+
     }
 }

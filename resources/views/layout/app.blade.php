@@ -14,7 +14,7 @@
     <h1 class="bg-primary text-white text-center">Hello, Yoimar!</h1>
 
 <div class="container">
-@yield('contenido')
+@yield('content')
 
 </div>
 

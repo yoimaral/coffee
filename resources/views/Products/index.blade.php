@@ -1,6 +1,6 @@
 @extends('layout.app');
 
-@section('contenido')
+@section('content')
 
 <div>
 <a href="{{ route('products.create') }}" class="btn btn-primary">Crear producto</a>
@@ -21,7 +21,6 @@
             <th scope="col">Peso</th>
             <th scope="col">Categoria</th>
             <th scope="col">Stock</th>
-            <th scope="col">Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -32,29 +31,13 @@
             <td>{{$product->id}}</td>
             <td>{{$product->name}}</td>
             <td>{{$product->reference}}</td>
-            <td>${{$product->getFormattedPrice()}}</td>
+            <td>${{$product->price}}</td>
             <td>{{$product->weight}}</td>
             <td>{{$product->category}}</td>
             <td>{{$product->stock}}</td>
-            <td>{{$product->created_at}}</td>
-            <td>
-                <input name="disabled_at" type="checkbox" class="form-check-input"
-                    onchange="event.preventDefault(); document.getElementById('{{$product->id}}').submit();"
-                    {{$product->disabled_at ? '' : 'checked'}}>
-                @if ($product->disabled_at)
-                Inhabilitado
-                @else
-                Habilitado
-                @endif
-                <form id="{{$product->id}}" action="" method="POST"
-                    style="display: none;">
-                    @csrf
-                    @method('PATCH')
-                </form>
-            </td>
 
             <td>
-                <form action="" method="POST">
+                <form action="{{ route('products.destroy') }}" method="POST">
                     @csrf
                     @method('DELETE')
 
@@ -67,7 +50,7 @@
             </td>
 
             <td>
-                <a class="btn btn-outline-secondary" href="{{route ('products.edit', $product)}}">Edit</a>
+                <a class="btn btn-outline-secondary" href="">Edit</a>
             </td>
 
         </tr>
