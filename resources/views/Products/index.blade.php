@@ -1,8 +1,10 @@
 @extends('layout.app');
 
 @section('contenido')
-<a href="">Crear producto</a>
 
+<div>
+<a href="{{ route('products.create') }}" class="btn btn-primary">Crear producto</a>
+</div>
 
 <table class="table table-dark">
     <thead>
@@ -12,11 +14,12 @@
             </td>
         </tr>
         <tr>
-            <th scope="col">#</th>
-            <th scope="col">Imagen</th>
+            <th scope="col">#Id</th>
             <th scope="col">Nombre</th>
-            <th scope="col">Descripción</th>
+            <th scope="col">Referencia</th>
             <th scope="col">Precio</th>
+            <th scope="col">Peso</th>
+            <th scope="col">Categoria</th>
             <th scope="col">Stock</th>
             <th scope="col">Acciones</th>
         </tr>
