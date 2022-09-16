@@ -12,7 +12,7 @@
                     @csrf
 
                     <div class="form-group row">
-                        <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                        <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
 
                         <div class="col-md-6">
                             <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"
@@ -23,13 +23,42 @@
                     @error('name')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
+
                     <div class="form-group row">
-                        <label for="description"
-                            class="col-md-4 col-form-label text-md-right">{{ __('Description') }}</label>
+                        <label for="reference" class="col-md-4 col-form-label text-md-right">{{ __('Referencia') }}</label>
 
                         <div class="col-md-6">
-                            <input id="description" type="text" class="form-control " name="description"
-                                value="{{ old('description') }}" autocomplete="description">
+                            <input id="reference" type="text" class="form-control" name="reference" value="{{ old('reference') }}"
+                                autocomplete="reference" autofocus>
+
+                        </div>
+                    </div>
+                    @error('refencia')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+
+
+                    <div class="form-group row">
+                        <label for="price" class="col-md-4 col-form-label text-md-right">{{ __('Precio') }}</label>
+
+                        <div class="col-md-6">
+                            <input id="price" type="number" class="form-control " name="price"
+                                value="{{ old('price') }}">
+
+                        </div>
+                    </div>
+                    @error('precio')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+
+
+                    <div class="form-group row">
+                        <label for="weight"
+                            class="col-md-4 col-form-label text-md-right">{{ __('Peso') }}</label>
+
+                        <div class="col-md-6">
+                            <input id="weight" type="text" class="form-control " name="weight"
+                                value="{{ old('weight') }}" autocomplete="weight">
 
                         </div>
                     </div>
@@ -38,17 +67,19 @@
                     @enderror
 
                     <div class="form-group row">
-                        <label for="price" class="col-md-4 col-form-label text-md-right">{{ __('price') }}</label>
+                        <label for="weight"
+                            class="col-md-4 col-form-label text-md-right">{{ __('Categoria') }}</label>
 
                         <div class="col-md-6">
-                            <input id="price" type="number" class="form-control " name="price"
-                                value="{{ old('price') }}">
+                            <input id="category" type="text" class="form-control " name="category"
+                                value="{{ old('category') }}" autocomplete="category">
 
                         </div>
                     </div>
-                    @error('price')
+                    @error('category')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
+
 
                     <div class="form-group row">
                         <label for="stock" class="col-md-4 col-form-label text-md-right">{{ __('stock') }}</label>
