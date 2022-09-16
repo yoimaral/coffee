@@ -84,7 +84,18 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $products = Product::find($product->id);
+
+        $products->name = $request->name;
+        $products->reference = $request->reference;
+        $products->price = $request->price;
+        $products->weight = $request->weight;
+        $products->category = $request->category;
+        $products->stock = $request->stock;
+
+        $products->save();
+
+        return redirect()->route('products.index');
     }
 
     /**
