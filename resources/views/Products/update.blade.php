@@ -7,31 +7,16 @@
                 <div class="card-header">{{ __('Update Products') }}</div>
 
 
-                <form action="{{route('products.update', $product)}}" enctype="multipart/form-data" method="POST">
+                <form action="{{route('products.update', $product->id)}}" enctype="multipart/form-data" method="POST">
                     @csrf
                     @method('PATCH')
-                    <div class="form-group row mt-2">
-                        <label for="img"
-                            class="col-md-4 col-form-label text-md-right">{{ __('Adjuntar Imagen') }}</label>
-                        <div class="col-md-6">
-
-                            <div class="custom-file">
-                                <input name="img" type="file" class="col-md-6 custom-file-input" id="customFile">
-                                <label class="custom-file-label" for="customFile">Seleccionar Archivo</label>
-                            </div>
-
-                        </div>
-                    </div>
-                    @error('img')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
 
                     <div class="form-group row">
-                        <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                        <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
 
                         <div class="col-md-6">
-                            <input id="name" type="text" class="form-control" name="name"
-                                value="{{ old('name', $product->name) }}" autocomplete="name" autofocus>
+                            <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"
+                                autocomplete="name" autofocus>
 
                         </div>
                     </div>
@@ -40,12 +25,40 @@
                     @enderror
 
                     <div class="form-group row">
-                        <label for="description"
-                            class="col-md-4 col-form-label text-md-right">{{ __('Description') }}</label>
+                        <label for="reference" class="col-md-4 col-form-label text-md-right">{{ __('Referencia') }}</label>
 
                         <div class="col-md-6">
-                            <input id="description" type="text" class="form-control " name="description"
-                                value="{{ old('description', $product->description) }}" autocomplete="description">
+                            <input id="reference" type="text" class="form-control" name="reference" value="{{ old('reference') }}"
+                                autocomplete="reference" autofocus>
+
+                        </div>
+                    </div>
+                    @error('refencia')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+
+
+                    <div class="form-group row">
+                        <label for="price" class="col-md-4 col-form-label text-md-right">{{ __('Precio') }}</label>
+
+                        <div class="col-md-6">
+                            <input id="price" type="number" class="form-control " name="price"
+                                value="{{ old('price') }}">
+
+                        </div>
+                    </div>
+                    @error('precio')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+
+
+                    <div class="form-group row">
+                        <label for="weight"
+                            class="col-md-4 col-form-label text-md-right">{{ __('Peso') }}</label>
+
+                        <div class="col-md-6">
+                            <input id="weight" type="text" class="form-control " name="weight"
+                                value="{{ old('weight') }}" autocomplete="weight">
 
                         </div>
                     </div>
@@ -54,17 +67,19 @@
                     @enderror
 
                     <div class="form-group row">
-                        <label for="price" class="col-md-4 col-form-label text-md-right">{{ __('price') }}</label>
+                        <label for="weight"
+                            class="col-md-4 col-form-label text-md-right">{{ __('Categoria') }}</label>
 
                         <div class="col-md-6">
-                            <input id="price" type="number" class="form-control " name="price" autocomplete="new-price"
-                                value="{{ old('price', $product->price) }}">
+                            <input id="category" type="text" class="form-control " name="category"
+                                value="{{ old('category') }}" autocomplete="category">
 
                         </div>
                     </div>
-                    @error('price')
+                    @error('category')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
+
 
                     <div class="form-group row">
                         <label for="stock" class="col-md-4 col-form-label text-md-right">{{ __('stock') }}</label>
@@ -77,6 +92,7 @@
                     @error('stock')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
+                    </div>
 
                     <div class="form-group row mb-2">
                         <div class="col-md-6 offset-md-4">

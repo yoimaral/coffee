@@ -48,7 +48,7 @@ class ProductController extends Controller
 
         $product->save();
 
-        return redirect()->route('products.create')->with('message', 'Ha sido exitosamente creado');
+        return redirect()->route('products.create');
     }
 
     /**
@@ -68,9 +68,11 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
-        //
+        $product = Product::find($id);
+
+        return view('products.update')->with('product',$product);
     }
 
     /**
@@ -95,6 +97,6 @@ class ProductController extends Controller
     {
         $product->delete();
 
-
+        return redirect()->route('products.index');
     }
 }

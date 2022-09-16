@@ -37,7 +37,7 @@
             <td>{{$product->stock}}</td>
 
             <td>
-                <form action="{{ route('products.destroy') }}" method="POST">
+                <form action="{{route('products.destroy',$product)}}" method="POST">
                     @csrf
                     @method('DELETE')
 
@@ -50,7 +50,7 @@
             </td>
 
             <td>
-                <a class="btn btn-outline-secondary" href="">Edit</a>
+                <a class="btn btn-outline-secondary" href="{{ route('products.edit', $product->) }}">Editar</a>
             </td>
 
         </tr>
