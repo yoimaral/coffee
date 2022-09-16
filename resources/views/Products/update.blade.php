@@ -15,7 +15,7 @@
                         <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
 
                         <div class="col-md-6">
-                            <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"
+                            <input id="name" type="text" class="form-control" name="name" value="{{ $product->name }}"
                                 autocomplete="name" autofocus>
 
                         </div>
@@ -28,7 +28,7 @@
                         <label for="reference" class="col-md-4 col-form-label text-md-right">{{ __('Referencia') }}</label>
 
                         <div class="col-md-6">
-                            <input id="reference" type="text" class="form-control" name="reference" value="{{ old('reference') }}"
+                            <input id="reference" type="text" class="form-control" name="reference" value="{{ $product->reference }}"
                                 autocomplete="reference" autofocus>
 
                         </div>
@@ -43,7 +43,7 @@
 
                         <div class="col-md-6">
                             <input id="price" type="number" class="form-control " name="price"
-                                value="{{ old('price') }}">
+                                value="{{ $product->price }}">
 
                         </div>
                     </div>
@@ -58,7 +58,7 @@
 
                         <div class="col-md-6">
                             <input id="weight" type="text" class="form-control " name="weight"
-                                value="{{ old('weight') }}" autocomplete="weight">
+                                value="{{ $product->weight }}" autocomplete="weight">
 
                         </div>
                     </div>
@@ -72,7 +72,7 @@
 
                         <div class="col-md-6">
                             <input id="category" type="text" class="form-control " name="category"
-                                value="{{ old('category') }}" autocomplete="category">
+                                value="{{ $product->category }}" autocomplete="category">
 
                         </div>
                     </div>
@@ -86,7 +86,7 @@
 
                         <div class="col-md-6">
                             <input id="stock" type="number" class="form-control " name="stock"
-                                value="{{ old('stock') }}">
+                                value="{{ $product->stock }}">
                         </div>
                     </div>
                     @error('stock')

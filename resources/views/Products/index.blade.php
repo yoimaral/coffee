@@ -50,7 +50,7 @@
             </td>
 
             <td>
-                <a class="btn btn-outline-secondary" href="{{ route('products.edit', $product->) }}">Editar</a>
+                <a class="btn btn-outline-secondary" href="{{ route('products.edit', $product->id) }}">Editar</a>
             </td>
 
         </tr>
