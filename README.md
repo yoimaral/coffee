@@ -6,6 +6,7 @@ Estas instrucciones te permitirán obtener una copia del proyecto en funcionamie
 # Pre-requisitos 📋
 
 -   Php 7.2.0 con phpCli habilitado para la ejecución de comando.
+-   Laragon opcional
 -   Mysql 5.7.19.
 -   Composer
 
@@ -30,3 +31,7 @@ Para la instalación debes clonar el repositorio en una carpeta preferiblemente 
 
 ```
 ❯ .env.example .env
+
+''''
+
+4. Recomendaciones
